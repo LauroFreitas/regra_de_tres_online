@@ -6,26 +6,26 @@
     <title>Calculadora de Regra de Três Automática</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1223653759853292"
+         crossorigin="anonymous"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
         }
-        /* Custom focus style for inputs to match the theme */
         input[type="number"]:focus {
-            border-color: #3b82f6; /* Tailwind's blue-500 */
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Subtle focus ring */
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
         }
-        /* Style for the "X" result field */
         #resultX {
-            font-weight: 600; /* Poppins semibold */
-            background-color: #f3f4f6; /* Tailwind's gray-100 */
+            font-weight: 600;
+            background-color: #f3f4f6;
         }
-        /* Error message styling */
         .error-message {
-            color: #ef4444; /* Tailwind's red-500 */
-            font-size: 0.875rem; /* text-sm */
-            min-height: 1.25rem; /* Ensure space even when empty to prevent layout shifts */
-            font-weight: 500; /* Medium weight for error text */
+            color: #ef4444;
+            font-size: 0.875rem;
+            min-height: 1.25rem;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -64,40 +64,38 @@
         </p>
     </div>
 
-    <div class="mt-8 p-4 border-2 border-dashed border-slate-300/50 rounded-lg text-center w-full max-w-md mx-auto">
-        <p class="text-slate-400 text-sm font-medium">Espaço para Anúncio Futuro</p>
-        <div class="bg-slate-700/30 h-24 mt-2 flex items-center justify-center rounded">
-            <span class="text-slate-500 text-xs">Ex: Banner de Anúncio (300x100)</span>
+    <div class="mt-8 w-full max-w-md mx-auto text-center">
+        <p class="text-slate-400 text-sm font-medium mb-2">Publicidade</p>
+        <ins class="adsbygoogle"
+             style="display:block;min-height:100px;" data-ad-client="ca-pub-1223653759853292"
+             data-ad-slot="SEU_NUMERO_DE_SLOT_AQUI" data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         </div>
-    </div>
-
     <script>
-        // Get DOM elements
         const valAInput = document.getElementById('valA');
         const valBInput = document.getElementById('valB');
         const valCInput = document.getElementById('valC');
         const resultXInput = document.getElementById('resultX');
         const errorMessageDiv = document.getElementById('errorMessage');
 
-        // Function to display error messages
         function displayError(message) {
             errorMessageDiv.textContent = message;
-            resultXInput.value = ''; // Clear result on error
+            resultXInput.value = '';
         }
 
-        // Function to clear error messages and result
         function clearErrorAndResult() {
             errorMessageDiv.textContent = '';
             resultXInput.value = '';
         }
         
-        // Main calculation and display function
         function calculateAndDisplay() {
             const aStr = valAInput.value;
             const bStr = valBInput.value;
             const cStr = valCInput.value;
 
-            // If any field is empty, clear previous results/errors and do nothing more
             if (aStr === '' || bStr === '' || cStr === '') {
                 clearErrorAndResult();
                 return;
@@ -107,7 +105,6 @@
             const b = parseFloat(bStr);
             const c = parseFloat(cStr);
 
-            // Validate inputs
             if (isNaN(a) || isNaN(b) || isNaN(c)) {
                 displayError("Por favor, insira números válidos em A, B e C.");
                 return;
@@ -118,28 +115,22 @@
                 return;
             }
             
-            // If all validations pass, clear any previous error message
             errorMessageDiv.textContent = ''; 
             
-            // Perform the calculation: (B * C) / A
             const x = (b * c) / a;
 
-            // Display the result
             resultXInput.value = x.toLocaleString('pt-BR', { 
                 minimumFractionDigits: 0, 
-                maximumFractionDigits: 4 // Adjust as needed for precision
+                maximumFractionDigits: 4
             });
         }
 
-        // Add event listeners to input fields for automatic calculation
         [valAInput, valBInput, valCInput].forEach(input => {
             input.addEventListener('input', calculateAndDisplay);
-            
-            // Optional: Allow calculation by pressing Enter (though auto-calc is primary)
             input.addEventListener('keypress', function(event) {
                 if (event.key === 'Enter') {
-                    event.preventDefault(); // Prevent form submission if it were in a form
-                    calculateAndDisplay(); // Attempt calculation
+                    event.preventDefault();
+                    calculateAndDisplay();
                 }
             });
         });
