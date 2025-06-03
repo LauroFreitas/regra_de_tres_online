@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Regra de Três Automática</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2490714376022692"
      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=wwOhAEOf3BTwcaxb609scdmhAD4e81JpUnWiSJGHI27hpE5om_rSldZ1D2ymgb-a" charset="UTF-8"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -35,30 +35,25 @@
         <h1 class="text-2xl sm:text-3xl font-bold text-center text-slate-800 mb-6 sm:mb-8">
             Calculadora de Regra de Três
         </h1>
-
         <div class="space-y-4 sm:space-y-6">
             <div class="grid grid-cols-5 items-center gap-2 sm:gap-3">
                 <input type="number" id="valA" placeholder="Valor A" class="col-span-2 p-3 border border-slate-300 rounded-lg text-slate-700 focus:outline-none transition-shadow duration-200">
                 <span class="text-slate-600 text-center text-sm sm:text-base font-medium">está para</span>
                 <input type="number" id="valB" placeholder="Valor B" class="col-span-2 p-3 border border-slate-300 rounded-lg text-slate-700 focus:outline-none transition-shadow duration-200">
             </div>
-
             <div class="flex justify-center items-center my-2 sm:my-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 h-5 w-5 sm:h-6 sm:w-6">
                     <line x1="12" y1="5" x2="12" y2="19"></line>
                     <polyline points="19 12 12 19 5 12"></polyline>
                 </svg>
             </div>
-            
             <div class="grid grid-cols-5 items-center gap-2 sm:gap-3">
                 <input type="number" id="valC" placeholder="Valor C" class="col-span-2 p-3 border border-slate-300 rounded-lg text-slate-700 focus:outline-none transition-shadow duration-200">
                 <span class="text-slate-600 text-center text-sm sm:text-base font-medium">está para</span>
                 <input type="text" id="resultX" placeholder="X" readonly class="col-span-2 p-3 border border-slate-300 rounded-lg text-slate-800 focus:outline-none transition-shadow duration-200 text-center">
             </div>
         </div>
-
         <div id="errorMessage" class="error-message text-center mt-4 mb-2"></div>
-
         <p class="text-xs text-slate-500 text-center mt-6 font-light">
             Insira A, B e C para encontrar X automaticamente.
         </p>
@@ -66,14 +61,18 @@
 
     <div class="mt-8 w-full max-w-md mx-auto text-center">
         <p class="text-slate-400 text-sm font-medium mb-2">Publicidade</p>
+        
         <ins class="adsbygoogle"
-             style="display:block;min-height:100px;"
-             data-ad-client="ca-pub-2490714376022692" data-ad-slot="SEU_NUMERO_DE_SLOT_AQUI" data-ad-format="auto"
+             style="display:block"
+             data-ad-client="ca-pub-2490714376022692"
+             data-ad-slot="9242728875"
+             data-ad-format="auto"
              data-full-width-responsive="true"></ins>
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         </div>
+
     <script>
         const valAInput = document.getElementById('valA');
         const valBInput = document.getElementById('valB');
@@ -90,7 +89,7 @@
             errorMessageDiv.textContent = '';
             resultXInput.value = '';
         }
-        
+
         function calculateAndDisplay() {
             const aStr = valAInput.value;
             const bStr = valBInput.value;
@@ -115,13 +114,13 @@
                 return;
             }
             
-            errorMessageDiv.textContent = ''; 
+            errorMessageDiv.textContent = '';
             
             const x = (b * c) / a;
 
-            resultXInput.value = x.toLocaleString('pt-BR', { 
-                minimumFractionDigits: 0, 
-                maximumFractionDigits: 4
+            resultXInput.value = x.toLocaleString('pt-BR', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 4 
             });
         }
 
